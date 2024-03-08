@@ -14,8 +14,8 @@ const ContactComponent: React.FC<ContactFormProps> = () => {
   const [email, setEmail] = useState("");
   const [inquietud, setInquietud] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    alert("Correo enviado satisfactoriamente");
   };
 
   return (
@@ -44,7 +44,7 @@ const ContactComponent: React.FC<ContactFormProps> = () => {
       </div>
       <div className="flex w-[65%] h-4/5 bg-gradient-to-l from-rose-600 to-indigo-800 justify-end rounded-lg">
         <div className="flex flex-col w-11/12 h-full justify-evenly items-center">
-          <p className="text-xl font-bold">Contáctenos</p>
+          <p className="text-xl text-white font-bold">Contáctenos</p>
           <Input
             border={false}
             type="name"
@@ -66,7 +66,7 @@ const ContactComponent: React.FC<ContactFormProps> = () => {
             value={inquietud}
             onChange={(e) => setInquietud(e.target.value)}
           />
-          <Button onClick={() => handleSubmit}>
+          <Button onClick={handleSubmit}>
             <p> Enviar </p>
           </Button>
         </div>

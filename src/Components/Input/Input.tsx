@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const inputClasses = `
-    ${type === "textarea" ? "h-24" : "h-10"}
+    ${type === "textarea" ? "h-24 whitespace-normal" : "h-10"}
     ${variant === "primary" ? "bg-blue-100" : ""}
     ${variant === "secondary" ? "bg-gray-100" : ""}
     ${variant === "tertiary" ? "bg-white" : ""}
