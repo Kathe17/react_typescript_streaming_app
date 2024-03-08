@@ -6,7 +6,7 @@ const SuscriptionsComponent = () => {
   return (
     <div className="w-full h-5/6 flex justify-evenly items-center pt-4 pb-8 overflow-y-scroll">
       <CardSuscription
-        customBg={"bg-green-600"}
+        customBg={"bg-rose-600"}
         customText="text-green-600"
         cost={"8.99"}
         tipoSuscripcion={"BASIC"}

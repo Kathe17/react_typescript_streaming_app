@@ -6,11 +6,12 @@ interface InputProps
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
+  border?: boolean;
   type?: string;
   variant?: "primary" | "secondary" | "tertiary";
   customSize?: "small" | "medium" | "large";
   //   children: React.ReactNode;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   placeholder: string;
   value: string | number | readonly string[] | undefined;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
@@ -18,6 +19,7 @@ interface InputProps
 
 const Input: React.FC<InputProps> = ({
   //   children,
+  border = true,
   type,
   variant,
   customSize,
@@ -39,7 +41,11 @@ const Input: React.FC<InputProps> = ({
   `;
 
   return (
-    <div className="flex items-center border border-gray-400 rounded-lg w-2/5 justify-between">
+    <div
+      className={`${
+        border ? "border border-gray-400" : ""
+      } flex items-center  rounded-lg w-2/5 justify-between}`}
+    >
       <div className="px-2">{icon}</div>
       <input
         type={type}
