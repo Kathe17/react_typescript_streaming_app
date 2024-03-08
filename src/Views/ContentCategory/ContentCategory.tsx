@@ -4,7 +4,7 @@ import { CategoryContext } from "../../Providers/CategoriesProvider";
 import { CategoryModel } from "../../Models/Category.model";
 import { getCategoriesApi } from "../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
-import useCategory from "./hooks/useCategory";
+import useCategory from "./Hooks/useCategory";
 import Navbar from "../../Components/Navbar/Navbar";
 
 const ContentCategory = () => {
@@ -37,9 +37,7 @@ const ContentCategory = () => {
         <div
           className="flex flex-col w-full h-screen justify-center items-center"
           style={{
-            background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${category.bgImage?.substring(
-              1
-            )}') no-repeat `,
+            background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${category.bgImage}') no-repeat `,
             backgroundSize: "100% 100%",
           }}
         >

@@ -1,6 +1,6 @@
 export const baseApiUrl = `http://localhost:5000`;
 
-export const baseUrlImages = `./Assets/Images`;
+export const baseUrlImages = `/Assets/Images`;
 
 export const PublicListRouters = [
   {

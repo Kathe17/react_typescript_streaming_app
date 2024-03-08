@@ -1,3 +1,3 @@
 interface getCategoriesApiParamsModel {
-  categoryId: number;
+  categoryId?: number;
 }

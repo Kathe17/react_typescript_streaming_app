@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import loginRoutes from "./src/Api/Routes/login.routes";
 import categoriesRoutes from "./src/Api/Routes/categories.routes";
+import detailsRoutes from "./src/Api/Routes/details.routes";
 
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -33,6 +34,7 @@ app.use(cors(corsOptions));
 // RUTAS
 app.use(loginRoutes);
 app.use(categoriesRoutes);
+app.use(detailsRoutes);
 
 app.listen(port, () => {
   console.log(`El servidor se esta ejecutando en el puerto: ${port}`);

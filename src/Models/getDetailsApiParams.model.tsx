@@ -1,0 +1,3 @@
+interface getDetailsApiParamsModel {
+  detailId?: number;
+}
