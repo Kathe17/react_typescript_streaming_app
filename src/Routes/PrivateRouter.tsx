@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PrivateListRouters } from "../Share/Constants";
 import useIdle from "../Hooks/useIdleTime";
@@ -28,7 +28,7 @@ export const PrivateRouter = ({
 
   useEffect(() => {
     if (!user && searchPathToFilterIfExist.length > 0) {
-      navigate("/login");
+      navigate("/");
     }
   }, []);
 

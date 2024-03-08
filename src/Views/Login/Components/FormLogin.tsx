@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import useLogin from "../Hooks/useLogin";
 import Button from "../../../Components/Button/Button";
 import Input from "../../../Components/Input/Input";
@@ -13,7 +13,6 @@ const FormLogin = () => {
     useLogin();
   return (
     <div className="flex flex-col w-1/2 h-1/2 justify-evenly items-center">
-      {/* <p>Usuario: {user?.nombre}</p> */}
       <Logo />
       <Input
         icon={<FiUser size={iconSize} color="white" />}
@@ -32,7 +31,7 @@ const FormLogin = () => {
       <Button onClick={handleSubmit}>
         <p> Iniciar Sesión</p>
       </Button>
-      {/* <button type="submit">Iniciar sesión</button> */}
+
       {error && <p className="text-red-500">{error}</p>}
     </div>
   );

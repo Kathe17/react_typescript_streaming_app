@@ -15,6 +15,9 @@ const ContactComponent: React.FC<ContactFormProps> = () => {
   const [inquietud, setInquietud] = useState("");
 
   const handleSubmit = () => {
+    setName("");
+    setEmail("");
+    setInquietud("");
     alert("Correo enviado satisfactoriamente");
   };
 

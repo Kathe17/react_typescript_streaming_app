@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function handleOpenClose() {
+export default function useHandleOpenClose() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {

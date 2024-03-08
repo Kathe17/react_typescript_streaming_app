@@ -8,7 +8,6 @@ const SesionDataNavbar = () => {
   const navigate = useNavigate();
   const user = getUserFromSession();
 
-  // const
   return (
     <div className="hidden md:flex items-center justify-end space-x-3 w-full h-full">
       <SearchBar />

@@ -10,7 +10,6 @@ interface InputProps
   type?: string;
   variant?: "primary" | "secondary" | "tertiary";
   customSize?: "small" | "medium" | "large";
-  //   children: React.ReactNode;
   icon?: React.ReactNode;
   placeholder: string;
   value: string | number | readonly string[] | undefined;
@@ -18,7 +17,6 @@ interface InputProps
 }
 
 const Input: React.FC<InputProps> = ({
-  //   children,
   border = true,
   type,
   variant,

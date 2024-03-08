@@ -26,28 +26,28 @@ const ContentDetailsComponent = ({
     <div
       className="flex flex-col w-full h-screen justify-start items-start"
       style={{
-        background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${detail.bgImage}') no-repeat `,
+        background: `url('${detail.bgImage}') no-repeat `,
         backgroundSize: "100% 100%",
       }}
     >
       <div className="flex flex-col justify-evenly items-start w-2/5 h-5/6">
         <div className="w-full p-2">
           <img className="w-1/5" src={detail.logo} alt="" />
-          <div className="flex w-1/6 bg-slate-300 rounded-lg justify-center">
-            <p>{detail.rating}</p>
+          <div className="flex w-1/6 bg-slate-500 rounded-lg justify-center">
+            <p className="text-white">{detail.rating}</p>
           </div>
           <div className="flex items-center">
-            <p>{detail.releaseDate}</p>
-            <VscDebugBreakpointData />
-            <p>{detail.duration}</p>
-            <VscDebugBreakpointData />
+            <p className="text-white">{detail.releaseDate}</p>
+            <VscDebugBreakpointData color="white" />
+            <p className="text-white">{detail.duration}</p>
+            <VscDebugBreakpointData color="white" />
             {detail.categories.map((category) => (
-              <div>{category.nombre}.</div>
+              <p className="text-white">{category.nombre}.</p>
             ))}
           </div>
         </div>
         <div className="w-full py-4 px-2">
-          <p>{detail.detailedSypnosis}</p>
+          <p className="text-white">{detail.detailedSypnosis}</p>
           <br />
           <Button onClick={handleOpen}>
             <p> Ver </p>
@@ -60,15 +60,8 @@ const ContentDetailsComponent = ({
           onClose={handleClose}
         ></ModalReproductor>
       ) : null}
-      {/* <div className="grid grid-cols-4 gap-4 h-5/6">
-            {details?.map((detail) => (
-              <DetailsCard key={category.id} details={detail} />
-            ))}
-          </div> */}
-      {/* {detail. */}
     </div>
   ) : (
-    // <div>{selectedCategory.nombre}</div>
     <p>Categoria no encontrada</p>
   );
 };

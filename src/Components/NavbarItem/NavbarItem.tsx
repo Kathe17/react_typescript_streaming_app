@@ -11,11 +11,8 @@ const NavbarItem = ({
   icon?: React.ReactElement;
 }) => {
   return (
-    <Link
-      to={to}
-      className="block lg:inline-block lg:mt-0 text-black hover:text-gray-600 p-4"
-    >
-      <div className="flex items-center text-black hover:text-gray-300">
+    <Link to={to} className="block lg:inline-block lg:mt-0  p-4">
+      <div className="flex items-center text-white hover:text-black">
         {icon}
         {nameItem}
       </div>

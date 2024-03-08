@@ -8,9 +8,6 @@ export const PublicListRouters = [
   {
     path: "/",
   },
-  {
-    path: "/login",
-  },
 ];
 
 export const PrivateListRouters = [
@@ -22,5 +19,14 @@ export const PrivateListRouters = [
   },
   {
     path: "/contentDetails",
+  },
+  {
+    path: "/suscriptions",
+  },
+  {
+    path: "/contact",
+  },
+  {
+    path: "/about",
   },
 ];

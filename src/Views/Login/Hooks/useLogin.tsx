@@ -1,7 +1,6 @@
-import { useState, useContext } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { postLoginApi } from "../../../Services/Login.api";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { asignarMensajeErrorPeticionesAxios } from "../../../utils/utils";
 
 export default function useLogin() {
@@ -9,7 +8,6 @@ export default function useLogin() {
   const [password, setPassword] = useState("1234");
   const [error, setError] = useState("");
 
-  // const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit:
@@ -29,18 +27,10 @@ export default function useLogin() {
         setError("");
         sessionStorage.setItem("user", JSON.stringify(response.data.user));
 
-        // setUser(response.data.user);
         navigate("/home");
         // Guardar el token en el almacenamiento local o en el contexto
         // Redirigir al usuario a la página de inicio
       } catch (error) {
-        // let errorMessage;
-        // if (axios.isAxiosError(error)) {
-        //   errorMessage = error.response?.data.message;
-        //   // Do something with this error...
-        // } else {
-        //   errorMessage = error;
-        // }
         setError(asignarMensajeErrorPeticionesAxios(error));
       }
     }

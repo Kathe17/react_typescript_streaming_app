@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CategoryModel } from "../../../Models/Category.model";
 import { getCategoriesApi } from "../../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../../utils/utils";

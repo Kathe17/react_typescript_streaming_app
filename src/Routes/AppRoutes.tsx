@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PublicRouter } from "./PublicRouter";
 import { PrivateRouter } from "./PrivateRouter";
 import ContentCategory from "../Views/ContentCategory/ContentCategory";
@@ -34,8 +34,6 @@ const AppRoutes = () => {
           path="/contentDetails/:detailId"
           element={<PrivateRouter component={ContentDetails} />}
         />
-        {/* <Route path="*" element={<Error404 />} />
-        <Route path="/403" element={<Error403 />} /> */}
       </Routes>
     </BrowserRouter>
   );

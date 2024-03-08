@@ -17,11 +17,6 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 //By default domain list allows all domains
 let domainList = "*";
 
-//If in production environment, only allow requests from the config allowed domains
-// if (config.environment === "production") {
-//   domainList = config.cors.allowed_domains;
-// }
-
 //Define the cors options to restrict the domain list
 var corsOptions = {
   origin: domainList,

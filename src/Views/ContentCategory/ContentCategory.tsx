@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import LayoutBase from "../../Layouts/LayoutBase";
 import ContentCategoryComponent from "./Components/ContentCategoryComponent";
 
 const ContentCategory = () => {
-  // const { categories } = useContext(CategoryContext);
   const { categoryId } = useParams();
 
   return (

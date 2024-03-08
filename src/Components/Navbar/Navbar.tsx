@@ -22,9 +22,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between">
           <div className="flex space-x-4 w-full sm:w-2/3">
             <div className="w-1/2 sm:w-1/5">
-              <a href="#" className="flex items-center py-3 px-2">
+              <a href="/home" className="flex items-center py-3 px-2">
                 <img src="/Assets/Logo.png" alt="App Icon" className="w-12" />
-                <span className="font-bold">Streaming App</span>
+                <span className="font-bold text-white hover:text-black">
+                  Streaming App
+                </span>
               </a>
             </div>
             <div className="hidden w-5/6 md:flex items-center space-x-1">

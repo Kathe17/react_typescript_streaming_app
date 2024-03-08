@@ -24,7 +24,7 @@ const ContentCategoryComponent = ({
     <div
       className="flex flex-col w-full h-screen  justify-center items-center overflow-y-scroll"
       style={{
-        background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${category.bgImage}') no-repeat `,
+        background: `url('${category.bgImage}') no-repeat `,
         backgroundSize: "100% 100%",
       }}
     >
