@@ -19,7 +19,7 @@ const AppRoutes = () => {
           element={<PrivateRouter component={ContentCategory} />}
         />
         <Route
-          path="/contentDetails"
+          path="/contentDetails/:detailId"
           element={<PrivateRouter component={ContentDetails} />}
         />
         {/* <Route path="*" element={<Error404 />} />

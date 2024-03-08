@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { getCategoriesApi } from "../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
 import { CategoryContext } from "../../Providers/CategoriesProvider";
-import useCategories from "./Hooks/useCategories";
+import useCategories from "../../Hooks/useCategories";
 
 const Home = () => {
   const { categories, getCategories, error } = useCategories();
@@ -30,7 +30,10 @@ const Home = () => {
       <Navbar></Navbar>
       <div className="flex flex-row justify-evenly w-full absolute bottom-2">
         {categories?.map((category) => (
-          <CategoryCard key={category.id} category={category} />
+          <CategoryCard
+            key={`CategoryCard_${category.id}`}
+            category={category}
+          />
         ))}
       </div>
     </div>
