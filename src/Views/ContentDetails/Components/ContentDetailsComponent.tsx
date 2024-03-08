@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useDetails from "../../../Hooks/useDetails";
 import { DetailsModel } from "../../../Models/Details.model";
+import { baseUrlImages } from "../../../Share/Constants";
 
 const ContentDetailsComponent = ({
   detailId,
@@ -24,7 +25,7 @@ const ContentDetailsComponent = ({
 
   return details.length > 0 ? (
     <div
-      className="flex flex-col w-full h-screen justify-center items-center"
+      className="flex flex-col w-full h-screen justify-center items-start"
       style={{
         background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('${
           getFirstDetail(details)?.bgImage
@@ -32,22 +33,20 @@ const ContentDetailsComponent = ({
         backgroundSize: "100% 100%",
       }}
     >
+      <div className="flex flex-col w-2/5 h-full bg-yellow-300">
+        <img
+          className="h-2/5"
+          src={`${baseUrlImages}${getFirstDetail(details)?.logo}`}
+          alt=""
+        />
+        {getFirstDetail(details)?.bgImage}
+      </div>
       {/* <div className="grid grid-cols-4 gap-4 h-5/6">
             {details?.map((detail) => (
               <DetailsCard key={category.id} details={detail} />
             ))}
           </div> */}
-      {getFirstDetail(details)?.categories.map((category) => {
-        return (
-          <p
-            key={`ContentDetailsCategory_${getFirstDetail(details)?.id}_${
-              category.id
-            }`}
-          >
-            {category.nombre}
-          </p>
-        );
-      })}
+      {/* {getFirstDetail(details)?. */}
     </div>
   ) : (
     // <div>{selectedCategory.nombre}</div>
