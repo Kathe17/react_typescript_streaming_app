@@ -25,13 +25,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      {/* <nav>
-        <Link to="/">Inicio</Link>
-        <Link to="/login">Iniciar sesión</Link>
-      </nav> */}
+    <div
+      className="w-full h-screen "
+      style={{
+        background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('/Assets/fondo.jpg') no-repeat `,
+        backgroundSize: "100% 100%",
+      }}
+    >
       <Navbar></Navbar>
-      <div className="flex flex-row">
+      <div className="flex flex-row items-end w-full absolute bottom-0">
         {categories?.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}

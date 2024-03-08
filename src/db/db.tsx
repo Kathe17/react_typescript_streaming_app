@@ -118,4 +118,68 @@ export const movieDetails: DetailsModel[] = [
     starring: ["Emma Stone", "Ken Watanabe", "Rila Fukushima"],
     rating: "PG",
   },
+  {
+    id: 4,
+    name: "Whispers in the Dark",
+    bgImage: "https://example.com/images/whispers-in-the-dark-bg.jpg",
+    logo: "https://example.com/images/whispers-in-the-dark-logo.png",
+    synopsis:
+      "An eerie tale of a haunted house that whispers secrets of the past, terrifying those who dare to uncover them.",
+    detailedSypnosis:
+      "In the heart of the countryside lies a house that whispers secrets of a tragic past. When a group of friends decides to spend the weekend there, they are quickly enveloped by the house's dark history. 'Whispers in the Dark' takes you on a terrifying journey through the unknown, where every corner hides a story, and every whisper could be your last.",
+    duration: "1h 50min",
+    directors: ["Elena Morales"],
+    releaseDate: "2023-10-31",
+    categories: [1], // Terror
+    starring: ["Daniel Kaluuya", "Anya Taylor-Joy"],
+    rating: "R",
+  },
+  {
+    id: 5,
+    name: "Skybound Dreams",
+    bgImage: "https://example.com/images/skybound-dreams-bg.jpg",
+    logo: "https://example.com/images/skybound-dreams-logo.png",
+    synopsis:
+      "An enchanting anime adventure that soars through the skies, exploring dreams and the bonds that tie us together.",
+    detailedSypnosis:
+      "'Skybound Dreams' tells the story of Kai and Aria, two young dreamers with the power to enter each other's dreams. As they navigate their way through fantastical skybound worlds, they uncover a deeper connection and a destiny that transcends the very fabric of dreams. This visually stunning anime explores themes of friendship, destiny, and the power of dreams.",
+    duration: "2h",
+    directors: ["Miyu Takahashi"],
+    releaseDate: "2024-04-15",
+    categories: [3], // Anime
+    starring: ["Voices: Haruka Tomatsu, Yuki Kaji"],
+    rating: "PG",
+  },
+  {
+    id: 6,
+    name: "Operation Thunderbolt",
+    bgImage: "https://example.com/images/operation-thunderbolt-bg.jpg",
+    logo: "https://example.com/images/operation-thunderbolt-logo.png",
+    synopsis:
+      "An action-packed thriller following an elite squad on a mission to stop a global threat.",
+    detailedSypnosis:
+      "When a dangerous weapon falls into the wrong hands, an elite squad led by Captain Mia Stone is tasked with a critical mission: retrieve the weapon and neutralize the threat. 'Operation Thunderbolt' is a high-octane action film that takes you on a thrilling ride across the globe, showcasing breathtaking stunts, strategic battles, and the unbreakable spirit of heroes fighting for peace.",
+    duration: "2h 10min",
+    directors: ["Liam Wright"],
+    releaseDate: "2023-08-05",
+    categories: [5], // Acción
+    starring: ["Scarlett Johansson", "Idris Elba", "Chris Hemsworth"],
+    rating: "PG-13",
+  },
+  {
+    id: 7,
+    name: "Love at Second Sight",
+    bgImage: "https://example.com/images/love-at-second-sight-bg.jpg",
+    logo: "https://example.com/images/love-at-second-sight-logo.png",
+    synopsis:
+      "A charming tale of unexpected love, second chances, and the magic of fate.",
+    detailedSypnosis:
+      "Julia, a successful but cynical businesswoman, unexpectedly crosses paths with Tom, a free-spirited artist, reigniting a spark from their past. 'Love at Second Sight' explores the unpredictable nature of love, the importance of second chances, and the belief that sometimes, fate has its own way of bringing people together.",
+    duration: "1h 40min",
+    directors: ["Carlos Mendez"],
+    releaseDate: "2024-02-14",
+    categories: [2], // Romance
+    starring: ["Rachel McAdams", "Ryan Gosling"],
+    rating: "PG-13",
+  },
 ];

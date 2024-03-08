@@ -1,84 +1,86 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { truncate } from "fs";
-import { getUserFromSession } from "../../utils/utils";
+import React, { useState } from "react";
+import { IoIosClose } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
+import NavbarItem from "../NavbarItem/NavbarItem";
+import { IoHomeOutline } from "react-icons/io5";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { MdFavoriteBorder } from "react-icons/md";
+import { CiLogout } from "react-icons/ci";
+import SesionDataNavbar from "../SesionDataNavbar/SesionDataNavbar";
 
 const Navbar: React.FC = () => {
-  // const { user, logout } = useContext(UserContext);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const navigate = useNavigate();
-  const user = getUserFromSession();
+  const iconSize = 20;
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <img className="w-10" src="./Assets/Logo.png" alt="" />
-        <span className="font-semibold text-xl tracking-tight">
-          Streaming App
-        </span>
-      </div>
-      <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-          <svg
-            className="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
-          <Link
-            to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-          >
-            Inicio
-          </Link>
-          <Link
-            to="/search"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-          >
-            Buscar
-          </Link>
-          <Link
-            to="/favorites"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-          >
-            Favoritos
-          </Link>
+    <nav className="bg-gradient-to-r from-rose-600 to-indigo-800 bg-opacity-60">
+      <div className="w-full px-4">
+        <div className="flex justify-between">
+          <div className="flex space-x-4 w-full sm:w-4/5">
+            <div className="w-1/2 sm:w-1/6">
+              <a href="#" className="flex items-center py-5 px-2">
+                <img src="./Assets/Logo.png" alt="App Icon" className="w-12" />
+                <span className="font-bold">Streaming App</span>
+              </a>
+            </div>
+            <div className="hidden w-5/6 md:flex items-center space-x-1">
+              <NavbarItem
+                to="/home"
+                nameItem="Inicio"
+                icon={<IoHomeOutline size={iconSize} />}
+              />
+              <NavbarItem to="/about" nameItem="Acerca de" />
+              <NavbarItem
+                to="/search"
+                nameItem="Buscar"
+                icon={<FaMagnifyingGlass size={iconSize} />}
+              />
+              <NavbarItem
+                to="/favorites"
+                nameItem="Favoritos"
+                icon={<MdFavoriteBorder size={iconSize} />}
+              />
+            </div>
+          </div>
+          <SesionDataNavbar />
+          <div className="md:hidden flex items-center">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? (
+                <IoIosClose size={iconSize} />
+              ) : (
+                <GiHamburgerMenu size={iconSize} />
+              )}
+            </button>
+          </div>
         </div>
-        <div>
-          {/* {user ? ( */}
-          {true ? (
-            <>
-              <span className="inline-block mt-4 lg:mt-0 text-sm text-white mr-4">
-                {user?.nombre}
-              </span>
-              <button
-                onClick={() => {
-                  // logout();
-
-                  sessionStorage.removeItem("user");
-
-                  navigate("/");
-                }}
-                className="block mt-4 lg:inline-block lg:mt-0 text-sm text-white hover:text-gray-200 focus:outline-none focus:shadow-outline-gray"
-              >
-                Cerrar sesión
-              </button>
-            </>
-          ) : (
-            <Link
-              to="/login"
-              className="block mt-4 lg:inline-block lg:mt-0 text-sm text-white hover:text-gray-200 focus:outline-none focus:shadow-outline-gray"
-            >
-              Iniciar sesión
-            </Link>
-          )}
-        </div>
+      </div>
+      <div
+        className={`${
+          isOpen ? "block self-center bg-slate-400 bg-opacity-40" : "hidden"
+        } md:hidden `}
+      >
+        <NavbarItem
+          to="/home"
+          nameItem="Inicio"
+          icon={<IoHomeOutline size={iconSize} />}
+        />
+        <NavbarItem to="/about" nameItem="Acerca de" />
+        <NavbarItem
+          to="/search"
+          nameItem="Buscar"
+          icon={<FaMagnifyingGlass size={iconSize} />}
+        />
+        <NavbarItem
+          to="/favorites"
+          nameItem="Favoritos"
+          icon={<MdFavoriteBorder size={iconSize} />}
+        />
+        <NavbarItem
+          to="/"
+          nameItem="Cerrar Sesión"
+          icon={<CiLogout size={iconSize} />}
+        />
       </div>
     </nav>
   );
