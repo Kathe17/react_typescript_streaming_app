@@ -73,8 +73,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 1,
     name: "The Journey Beyond",
-    bgImage: `${baseUrlImages}/Details/the-journey-beyond-bg.jpg`,
-    logo: `${baseUrlImages}/Details/the-journey-beyond-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/the-journey-beyond-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/the-journey-beyond-logo.png`,
     synopsis:
       "A gripping tale of adventure and discovery as a group of explorers ventures into unknown lands.",
     detailedSypnosis:
@@ -89,8 +89,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 2,
     name: "Mysteries of the Cosmos",
-    bgImage: `${baseUrlImages}/Details/mysteries-cosmos-bg.jpg`,
-    logo: `${baseUrlImages}/Details/mysteries-cosmos-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/mysteries-cosmos-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/mysteries-cosmos-logo.png`,
     synopsis:
       "Explore the vastness of the universe and the wonders it holds in this captivating documentary series.",
     detailedSypnosis:
@@ -105,8 +105,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 3,
     name: "Heartbeats in Tokyo",
-    bgImage: `${baseUrlImages}/Details/heartbeats-in-tokyo-bg.jpg`,
-    logo: `${baseUrlImages}/Details/heartbeats-in-tokyo-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/heartbeats-in-tokyo-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/heartbeats-in-tokyo-logo.png`,
     synopsis:
       "A romantic comedy that unfolds under the neon lights of Tokyo, where two strangers find laughter and love.",
     detailedSypnosis:
@@ -121,8 +121,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 4,
     name: "Whispers in the Dark",
-    bgImage: `${baseUrlImages}/Details/whispers-in-the-dark-bg.jpg`,
-    logo: `${baseUrlImages}/Details/whispers-in-the-dark-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/whispers-in-the-dark-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/whispers-in-the-dark-logo.png`,
     synopsis:
       "An eerie tale of a haunted house that whispers secrets of the past, terrifying those who dare to uncover them.",
     detailedSypnosis:
@@ -137,8 +137,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 5,
     name: "Skybound Dreams",
-    bgImage: `${baseUrlImages}/Details/skybound-dreams-bg.jpg`,
-    logo: `${baseUrlImages}/Details/skybound-dreams-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/skybound-dreams-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/skybound-dreams-logo.png`,
     synopsis:
       "An enchanting anime adventure that soars through the skies, exploring dreams and the bonds that tie us together.",
     detailedSypnosis:
@@ -153,8 +153,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 6,
     name: "Operation Thunderbolt",
-    bgImage: `${baseUrlImages}/Details/operation-thunderbolt-bg.jpg`,
-    logo: `${baseUrlImages}/Details/operation-thunderbolt-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/operation-thunderbolt-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/operation-thunderbolt-logo.png`,
     synopsis:
       "An action-packed thriller following an elite squad on a mission to stop a global threat.",
     detailedSypnosis:
@@ -169,8 +169,8 @@ export const movieDetails: DetailsModel[] = [
   {
     id: 7,
     name: "Love at Second Sight",
-    bgImage: `${baseUrlImages}/Details/love-at-second-sight-bg.jpg`,
-    logo: `${baseUrlImages}/Details/love-at-second-sight-logo.png`,
+    bgImage: `${baseUrlImages}/Details/bg/love-at-second-sight-bg.jpg`,
+    logo: `${baseUrlImages}/Details/logos/love-at-second-sight-logo.png`,
     synopsis:
       "A charming tale of unexpected love, second chances, and the magic of fate.",
     detailedSypnosis:

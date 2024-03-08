@@ -1,7 +1,7 @@
 import React from "react";
 import { getUserFromSession } from "../../utils/utils";
 import Button from "../Button/Button";
-import useLogin from "../../Views/Login/Hooks/useLogin";
+
 import { useNavigate } from "react-router-dom";
 
 const SesionDataNavbar = () => {
@@ -18,7 +18,7 @@ const SesionDataNavbar = () => {
         onClick={() => {
           sessionStorage.removeItem("user");
 
-          navigate("/login");
+          navigate("/");
         }}
       >
         <p> Cerrar Sesión</p>
