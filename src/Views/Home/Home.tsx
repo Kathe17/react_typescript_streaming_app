@@ -28,7 +28,7 @@ const Home = () => {
       }}
     >
       <Navbar></Navbar>
-      <div className="flex flex-row items-end w-full absolute bottom-0">
+      <div className="flex flex-row justify-evenly w-full absolute bottom-2">
         {categories?.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}
