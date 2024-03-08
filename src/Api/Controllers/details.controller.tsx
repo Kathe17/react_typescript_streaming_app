@@ -1,27 +1,52 @@
 import { Request, Response } from "express";
-import { movieDetails } from "../../db/db";
+import { baseUrlDetailsVideos, baseUrlImages } from "../../Share/Constants";
+import db from "../../db/db.json";
+import { DetailsModel, DetailsModelDB } from "../../Models/Details.model";
+import { CategoryModel } from "../../Models/Category.model";
 
 export const getDetails = async (req: Request, res: Response) => {
   const { categoryId, detailId } = req.query;
-  let resDetails = movieDetails;
+  let movieDetails: DetailsModelDB[] = db.details;
+  const categoriesDB = db.categorias;
 
-  if (detailId && typeof detailId === "string") {
-    resDetails = [];
-    const detailIdNumber = parseInt(detailId);
-    if (!isNaN(detailIdNumber)) {
-      resDetails = movieDetails.filter((detail) => {
-        return detail.id === detailIdNumber;
-      });
+  let resDetails: DetailsModel[] = [];
+
+  let categoryIdNumber: number;
+  let detailIdNumber: number;
+
+  if (categoryId || detailId) {
+    if (categoryId && typeof categoryId === "string") {
+      categoryIdNumber = parseInt(categoryId);
     }
-  }
-  if (categoryId && typeof categoryId === "string") {
-    resDetails = [];
-    const categoryIdNumber = parseInt(categoryId);
-    if (!isNaN(categoryIdNumber)) {
-      resDetails = movieDetails.filter((detail) => {
-        return detail.categories.includes(categoryIdNumber);
-      });
+
+    if (detailId && typeof detailId === "string") {
+      detailIdNumber = parseInt(detailId);
     }
+
+    movieDetails = movieDetails.filter((detail) => {
+      return (
+        (isNaN(categoryIdNumber) ||
+          detail.categories.includes(categoryIdNumber)) &&
+        (isNaN(detailIdNumber) || detail.id === detailIdNumber)
+      );
+    });
+  } else {
+    movieDetails = movieDetails;
   }
+
+  resDetails = movieDetails.map((detail) => {
+    return {
+      ...detail,
+      bgImage: `${baseUrlImages}/Details/bg/${detail.bgImage}`,
+      logo: `${baseUrlImages}/Details/logos/${detail.logo}`,
+      urlMediaFull: `${baseUrlDetailsVideos}/${detail.urlMediaFull}`,
+      categories: detail.categories.map((category) => {
+        return categoriesDB.find((categoryDB) => {
+          return categoryDB.id === category;
+        }) as CategoryModel;
+      }),
+    };
+  });
+
   return res.json(resDetails);
 };
