@@ -2,15 +2,24 @@ import { Request, Response } from "express";
 import { movieDetails } from "../../db/db";
 
 export const getDetails = async (req: Request, res: Response) => {
-  const { detailsId } = req.query;
+  const { categoryId, detailId } = req.query;
   let resDetails = movieDetails;
 
-  if (detailsId && typeof detailsId === "string") {
+  if (detailId && typeof detailId === "string") {
     resDetails = [];
-    const detailsIdNumber = parseInt(detailsId);
-    if (!isNaN(detailsIdNumber)) {
+    const detailIdNumber = parseInt(detailId);
+    if (!isNaN(detailIdNumber)) {
       resDetails = movieDetails.filter((detail) => {
-        return detail.id === detailsIdNumber;
+        return detail.id === detailIdNumber;
+      });
+    }
+  }
+  if (categoryId && typeof categoryId === "string") {
+    resDetails = [];
+    const categoryIdNumber = parseInt(categoryId);
+    if (!isNaN(categoryIdNumber)) {
+      resDetails = movieDetails.filter((detail) => {
+        return detail.categories.includes(categoryIdNumber);
       });
     }
   }

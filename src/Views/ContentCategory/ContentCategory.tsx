@@ -52,7 +52,7 @@ const ContentCategory = () => {
         >
           <div className="grid grid-cols-4 gap-4 h-5/6">
             {details?.map((detail) => (
-              <DetailsCard key={category.id} details={detail} />
+              <DetailsCard key={`DetailsCard_${detail.id}`} details={detail} />
             ))}
           </div>
         </div>
