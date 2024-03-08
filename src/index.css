@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap");
-:root {
-  --color-primary-light: #9dd1ef;
-  --color-primary-dark: #6aa6c4;
-}
+/* :root {
+  --GreenBasic: #16a34a;
+  --BlueBasic: #2563eb;
+  --IndigoBasic: #312e81;
+} */
 
 * {
   margin: 0;

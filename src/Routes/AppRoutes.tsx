@@ -8,6 +8,7 @@ import Home from "../Views/Home/Home";
 import Login from "../Views/Login/Login";
 import About from "../Views/About/About";
 import Suscriptions from "../Views/Suscriptions/Suscriptions";
+import Contact from "../Views/Contact/Contact";
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,10 @@ const AppRoutes = () => {
         <Route
           path="/suscriptions"
           element={<PrivateRouter component={Suscriptions} />}
+        />
+        <Route
+          path="/contact"
+          element={<PrivateRouter component={Contact} />}
         />
         <Route
           path="/contentCategory/:categoryId"
