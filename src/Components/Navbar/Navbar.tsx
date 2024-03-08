@@ -3,10 +3,13 @@ import { IoIosClose } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavbarItem from "../NavbarItem/NavbarItem";
 import { IoHomeOutline } from "react-icons/io5";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaPeopleGroup } from "react-icons/fa6";
 import { MdFavoriteBorder } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
+import { GrContact } from "react-icons/gr";
+import { GrMoney } from "react-icons/gr";
 import SesionDataNavbar from "../SesionDataNavbar/SesionDataNavbar";
+import SearchBar from "../SearchBar/Searchbar";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +17,11 @@ const Navbar: React.FC = () => {
   const iconSize = 20;
 
   return (
-    <nav className="bg-gradient-to-r from-rose-600 to-indigo-800 bg-opacity-60">
+    <nav className="bg-gradient-to-r from-rose-600 to-indigo-800 sticky top-0">
       <div className="w-full px-4">
         <div className="flex justify-between">
-          <div className="flex space-x-4 w-full sm:w-4/5">
-            <div className="w-1/2 sm:w-1/6">
+          <div className="flex space-x-4 w-full sm:w-2/3">
+            <div className="w-1/2 sm:w-1/5">
               <a href="#" className="flex items-center py-5 px-2">
                 <img src="/Assets/Logo.png" alt="App Icon" className="w-12" />
                 <span className="font-bold">Streaming App</span>
@@ -30,15 +33,20 @@ const Navbar: React.FC = () => {
                 nameItem="Inicio"
                 icon={<IoHomeOutline size={iconSize} />}
               />
-              <NavbarItem to="/about" nameItem="Acerca de" />
+
               <NavbarItem
-                to="/search"
-                nameItem="Buscar"
-                icon={<FaMagnifyingGlass size={iconSize} />}
+                to="/about"
+                nameItem="Nosotros"
+                icon={<FaPeopleGroup size={iconSize} />}
               />
               <NavbarItem
-                to="/favorites"
-                nameItem="Favoritos"
+                to="/suscriptions"
+                nameItem="Suscripciones"
+                icon={<GrMoney size={iconSize} />}
+              />
+              <NavbarItem
+                to="/contact"
+                nameItem="Contactanos"
                 icon={<MdFavoriteBorder size={iconSize} />}
               />
             </div>
@@ -65,16 +73,27 @@ const Navbar: React.FC = () => {
           nameItem="Inicio"
           icon={<IoHomeOutline size={iconSize} />}
         />
-        <NavbarItem to="/about" nameItem="Acerca de" />
+        <div className="w-11/12 px-2">
+          <SearchBar
+            onSearch={(searchTerm) => {
+              console.log(searchTerm);
+            }}
+          />
+        </div>
         <NavbarItem
-          to="/search"
-          nameItem="Buscar"
-          icon={<FaMagnifyingGlass size={iconSize} />}
+          to="/about"
+          nameItem="Nosotros"
+          icon={<FaPeopleGroup size={iconSize} />}
         />
         <NavbarItem
-          to="/favorites"
-          nameItem="Favoritos"
-          icon={<MdFavoriteBorder size={iconSize} />}
+          to="/suscriptions"
+          nameItem="Suscripciones"
+          icon={<GrMoney size={iconSize} />}
+        />
+        <NavbarItem
+          to="/contact"
+          nameItem="Contactanos"
+          icon={<GrContact size={iconSize} />}
         />
         <NavbarItem
           to="/"

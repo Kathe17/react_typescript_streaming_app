@@ -5,6 +5,7 @@ import { getCategoriesApi } from "../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
 import { CategoryContext } from "../../Providers/CategoriesProvider";
 import useCategories from "../../Hooks/useCategories";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
   const { categories, getCategories, error } = useCategories();
@@ -28,7 +29,7 @@ const Home = () => {
       }}
     >
       <Navbar></Navbar>
-      <div className="flex flex-row justify-evenly w-full absolute bottom-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 w-full absolute bottom-14 overflow-y-scroll">
         {categories?.map((category) => (
           <CategoryCard
             key={`CategoryCard_${category.id}`}
@@ -36,6 +37,7 @@ const Home = () => {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import Button from "../../../../Components/Button/Button";
 const CategoryCard = ({ category }: { category: CategoryModel }) => {
   const navigate = useNavigate();
   return (
-    <div className="flex bg-slate-200 bg-opacity-50 w-1/5 mx-2 h-56 text-center items-center justify-center">
+    <div className="flex bg-slate-200 bg-opacity-50 w-full h-auto text-center items-center justify-center">
       {/* <h2>{category.nombre}</h2> */}
       {/* <p>{category.nombre}</p> */}
       {/* <Link to={`/contentCategory/${category.id}`}>{category.nombre}</Link> */}

@@ -6,6 +6,8 @@ import ContentCategory from "../Views/ContentCategory/ContentCategory";
 import ContentDetails from "../Views/ContentDetails/ContentDetails";
 import Home from "../Views/Home/Home";
 import Login from "../Views/Login/Login";
+import About from "../Views/About/About";
+import Suscriptions from "../Views/Suscriptions/Suscriptions";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +16,11 @@ const AppRoutes = () => {
         {/* LOGIN */}
         <Route path="/" element={<PublicRouter component={Login} />} />
         <Route path="/home" element={<PrivateRouter component={Home} />} />
+        <Route path="/about" element={<PrivateRouter component={About} />} />
+        <Route
+          path="/suscriptions"
+          element={<PrivateRouter component={Suscriptions} />}
+        />
         <Route
           path="/contentCategory/:categoryId"
           element={<PrivateRouter component={ContentCategory} />}
