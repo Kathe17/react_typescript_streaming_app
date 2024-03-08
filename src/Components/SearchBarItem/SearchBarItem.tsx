@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import useDetails from "../../Hooks/useDetails";
 import { DetailsModel } from "../../Models/Details.model";
-import { useLocation, useNavigate } from "react-router-dom";
 import useNavigateToDetails from "./Hooks/useNavigateToDetails";
 
 interface SearchBarItemProps {

@@ -1,5 +1,4 @@
 import React from "react";
-import { IoIosCheckmark } from "react-icons/io";
 import CardSuscription from "./CardSuscription";
 
 const SuscriptionsComponent = () => {

@@ -10,12 +10,7 @@ export const PrivateRouter = ({
 }: {
   component: React.ComponentType;
 }) => {
-  // const { user, logout } = useContext(UserContext);
-  // const { user, logout } = useContext(UserContext);
-  // const { user } = useContext(UserContext);
-
   const navigate = useNavigate();
-  // const validated = JSON.parse(sessionStorage.getItem("validated") ?? "false");
   const user = getUserFromSession();
 
   const location = useLocation();
@@ -24,9 +19,7 @@ export const PrivateRouter = ({
   );
 
   const Logout = () => {
-    // logout();
     sessionStorage.removeItem("user");
-
     navigate("/");
     alert("Tu sesión fue cerrada por inactividad");
   };
@@ -34,9 +27,7 @@ export const PrivateRouter = ({
   useIdle({ onIdle: Logout, idleTime: 15 });
 
   useEffect(() => {
-    // console.log("user", user);
     if (!user && searchPathToFilterIfExist.length > 0) {
-      // navigate("/403");
       navigate("/login");
     }
   }, []);
