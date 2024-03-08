@@ -15,7 +15,7 @@ export default function useCategory() {
       });
       setCategory(responseGetCategories.data?.[0]);
     } catch (error) {
-      alert(asignarMensajeErrorPeticionesAxios(error));
+      setError(asignarMensajeErrorPeticionesAxios(error));
     }
   };
 

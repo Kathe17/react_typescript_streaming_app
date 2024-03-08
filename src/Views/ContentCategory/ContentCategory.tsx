@@ -6,28 +6,37 @@ import { getCategoriesApi } from "../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
 import useCategory from "./Hooks/useCategory";
 import Navbar from "../../Components/Navbar/Navbar";
+import useDetails from "./Hooks/useDetails";
+import DetailsCard from "./Components/DetailsCard.tsx/DetailsCard";
 
 const ContentCategory = () => {
   // const { categories } = useContext(CategoryContext);
   const { categoryId } = useParams();
 
-  const { category, getCategory, error } = useCategory();
+  const { category, getCategory, error: errorCategory } = useCategory();
+  const { details, getDetails, error: errorDetails } = useDetails();
 
   useEffect(() => {
     if (categoryId) {
       const categoryIdNumber = parseInt(categoryId);
       if (!isNaN(categoryIdNumber)) {
-        console.log("categoryIdNumber", categoryIdNumber);
         getCategory(categoryIdNumber);
+        getDetails(categoryIdNumber);
       }
     }
   }, [categoryId]);
 
   useEffect(() => {
-    if (error) {
-      alert(error);
+    if (errorCategory) {
+      alert(errorCategory);
     }
-  }, [error]);
+  }, [errorCategory]);
+
+  useEffect(() => {
+    if (errorDetails) {
+      alert(errorDetails);
+    }
+  }, [errorDetails]);
 
   // return <div>ContentCategory</div>;
   return (
@@ -41,7 +50,11 @@ const ContentCategory = () => {
             backgroundSize: "100% 100%",
           }}
         >
-          <p>{category.nombre}</p>
+          <div className="flex flex-row justify-evenly w-full absolute bottom-2">
+            {details?.map((detail) => (
+              <DetailsCard key={category.id} details={detail} />
+            ))}
+          </div>
         </div>
       ) : (
         // <div>{selectedCategory.nombre}</div>

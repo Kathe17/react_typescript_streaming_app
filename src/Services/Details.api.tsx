@@ -1,7 +1,7 @@
 import axios from "axios";
 import { baseApiUrl } from "../Share/Constants";
 
-export const getDetailssApi = async (
+export const getDetailsApi = async (
   getDetailsApiParams?: getDetailsApiParamsModel
 ) => {
   return await axios.get(

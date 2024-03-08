@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { getCategoriesApi } from "../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
 import { CategoryContext } from "../../Providers/CategoriesProvider";
-import useCategories from "./hooks/useCategories";
+import useCategories from "./Hooks/useCategories";
 
 const Home = () => {
   const { categories, getCategories, error } = useCategories();
