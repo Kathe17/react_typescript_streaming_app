@@ -1,0 +1,3 @@
+interface getCategoriesApiParamsModel {
+  categoryId: number;
+}

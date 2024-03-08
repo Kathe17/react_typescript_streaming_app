@@ -13,7 +13,7 @@ export const getUserFromSession = () => {
 export const asignarMensajeErrorPeticionesAxios = (error: unknown) => {
   let errorMessage;
   if (axios.isAxiosError(error)) {
-    errorMessage = error.response?.data.message;
+    errorMessage = error.response?.data.message ?? error.message;
   } else {
     errorMessage = error;
   }
