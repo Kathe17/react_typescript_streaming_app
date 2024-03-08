@@ -61,6 +61,17 @@ const ContentDetails = () => {
               <DetailsCard key={category.id} details={detail} />
             ))}
           </div> */}
+          {getFirstDetail(details)?.categories.map((category) => {
+            return (
+              <p
+                key={`ContentDetailsCategory_${getFirstDetail(details)?.id}_${
+                  category.id
+                }`}
+              >
+                {category.nombre}
+              </p>
+            );
+          })}
         </div>
       ) : (
         // <div>{selectedCategory.nombre}</div>

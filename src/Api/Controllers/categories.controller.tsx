@@ -1,9 +1,13 @@
 import { Request, Response } from "express";
-import { categorias } from "../../db/db";
+import db from "../../db/db.json";
+import { baseUrlImages } from "../../Share/Constants";
 
 export const getCategories = async (req: Request, res: Response) => {
   const { categoryId } = req.query;
+  const categorias = db.categorias;
   let resCategorias = categorias;
+
+  console.log("categories", JSON.stringify(categorias));
 
   if (categoryId && typeof categoryId === "string") {
     resCategorias = [];
@@ -14,5 +18,14 @@ export const getCategories = async (req: Request, res: Response) => {
       });
     }
   }
+
+  resCategorias = resCategorias.map((categoria) => {
+    return {
+      ...categoria,
+      bgImage: `${baseUrlImages}/Categories/bg/${categoria.bgImage}`,
+      logo: `${baseUrlImages}/Categories/logos/${categoria.logo}`,
+    };
+  });
+
   return res.json(resCategorias);
 };
