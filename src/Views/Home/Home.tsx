@@ -1,28 +1,23 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import CategoryCard from "./Components/CategoryCard/CategoryCard";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getCategoriesApi } from "../../Services/Categories.api";
 import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
-import { CategoryModel } from "../../Models/Category.model";
-import { categorias } from "../../db/db";
 import { CategoryContext } from "../../Providers/CategoriesProvider";
+import useCategories from "./hooks/useCategories";
 
 const Home = () => {
-  const { categories, setCategories } = useContext(CategoryContext);
-
-  const getCategories = async () => {
-    try {
-      const responseGetCategories = await getCategoriesApi();
-      setCategories(responseGetCategories.data);
-    } catch (error) {
-      alert(asignarMensajeErrorPeticionesAxios(error));
-    }
-  };
+  const { categories, getCategories, error } = useCategories();
 
   useEffect(() => {
     getCategories();
   }, []);
+
+  useEffect(() => {
+    if (error) {
+      alert(error);
+    }
+  }, [error]);
 
   return (
     <div>
