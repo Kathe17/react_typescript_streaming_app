@@ -8,14 +8,16 @@ export default function useCategory() {
 
   const [category, setCategory] = useState<CategoryModel>();
 
-  const getCategory = async (categoryId: number) => {
+  const getCategory = async ({ categoryId }: getCategoriesApiParamsModel) => {
     try {
       const responseGetCategories = await getCategoriesApi({
-        categoryId: categoryId,
+        categoryId,
       });
       setCategory(responseGetCategories.data?.[0]);
     } catch (error) {
-      setError(asignarMensajeErrorPeticionesAxios(error));
+      const tempError = asignarMensajeErrorPeticionesAxios(error);
+      setError(tempError);
+      alert(tempError);
     }
   };
 

@@ -9,7 +9,7 @@ import { CiLogout } from "react-icons/ci";
 import { GrContact } from "react-icons/gr";
 import { GrMoney } from "react-icons/gr";
 import SesionDataNavbar from "../SesionDataNavbar/SesionDataNavbar";
-import SearchBar from "../SearchBar/Searchbar";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,12 +17,12 @@ const Navbar: React.FC = () => {
   const iconSize = 20;
 
   return (
-    <nav className="bg-gradient-to-r from-rose-600 to-indigo-800 sticky top-0">
+    <nav className=" z-50 bg-gradient-to-r from-rose-600 to-indigo-800 sticky top-0">
       <div className="w-full px-4">
         <div className="flex justify-between">
           <div className="flex space-x-4 w-full sm:w-2/3">
             <div className="w-1/2 sm:w-1/5">
-              <a href="#" className="flex items-center py-5 px-2">
+              <a href="#" className="flex items-center py-3 px-2">
                 <img src="/Assets/Logo.png" alt="App Icon" className="w-12" />
                 <span className="font-bold">Streaming App</span>
               </a>
@@ -51,7 +51,9 @@ const Navbar: React.FC = () => {
               />
             </div>
           </div>
-          <SesionDataNavbar />
+          <div className="w-1/6 sm:w-1/3 flex space-x-4 ">
+            <SesionDataNavbar />
+          </div>
           <div className="md:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
@@ -73,12 +75,8 @@ const Navbar: React.FC = () => {
           nameItem="Inicio"
           icon={<IoHomeOutline size={iconSize} />}
         />
-        <div className="w-11/12 px-2">
-          <SearchBar
-            onSearch={(searchTerm) => {
-              console.log(searchTerm);
-            }}
-          />
+        <div className="w-11/12 px-2 ">
+          <SearchBar />
         </div>
         <NavbarItem
           to="/about"

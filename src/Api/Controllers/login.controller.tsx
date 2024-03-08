@@ -15,7 +15,6 @@ export const login = async (req: Request, res: Response) => {
       ...usuarioEncontrado,
       imgProfile: `${baseUrlImages}/userProfilePicture/${usuarioEncontrado.imgProfile}`,
     };
-    console.log("tempUsuario", JSON.stringify(tempUsuario));
     return res.json({
       message: `Bienvenido ${tempUsuario.nombre}`,
       user: { ...tempUsuario, password: undefined },

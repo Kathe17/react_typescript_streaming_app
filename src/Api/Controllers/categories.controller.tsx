@@ -7,8 +7,6 @@ export const getCategories = async (req: Request, res: Response) => {
   const categorias = db.categorias;
   let resCategorias = categorias;
 
-  console.log("categories", JSON.stringify(categorias));
-
   if (categoryId && typeof categoryId === "string") {
     resCategorias = [];
     const categoryIdNumber = parseInt(categoryId);

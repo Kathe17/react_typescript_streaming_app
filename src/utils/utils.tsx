@@ -19,3 +19,15 @@ export const asignarMensajeErrorPeticionesAxios = (error: unknown) => {
   }
   return errorMessage;
 };
+
+export const textoLikeIncludes = (
+  data: string,
+  searchTerm: string
+): boolean => {
+  // Asumiendo que se quiere una comparación independiente de mayusculas
+  const searchTermLower = searchTerm.toLowerCase();
+  const dataLower = data.toLowerCase();
+
+  // Validar si los datos data contienen a searchTerm el termino de búsqueda
+  return dataLower.includes(searchTermLower);
+};

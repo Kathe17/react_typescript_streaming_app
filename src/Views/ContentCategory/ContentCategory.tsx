@@ -1,44 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { CategoryContext } from "../../Providers/CategoriesProvider";
-import { CategoryModel } from "../../Models/Category.model";
-import { getCategoriesApi } from "../../Services/Categories.api";
-import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import useCategory from "./Hooks/useCategory";
 import Navbar from "../../Components/Navbar/Navbar";
-import useDetails from "./Hooks/useDetails";
 import DetailsCard from "./Components/DetailsCard.tsx/DetailsCard";
+import useDetails from "../../Hooks/useDetails";
 
 const ContentCategory = () => {
   // const { categories } = useContext(CategoryContext);
   const { categoryId } = useParams();
 
-  const { category, getCategory, error: errorCategory } = useCategory();
-  const { details, getDetails, error: errorDetails } = useDetails();
+  const { category, getCategory } = useCategory();
+  const { details, getDetails } = useDetails();
 
   useEffect(() => {
     if (categoryId) {
       const categoryIdNumber = parseInt(categoryId);
       if (!isNaN(categoryIdNumber)) {
-        getCategory(categoryIdNumber);
-        getDetails(categoryIdNumber);
+        getCategory({ categoryId: categoryIdNumber });
+        getDetails({ categoryId: categoryIdNumber });
       }
     }
   }, [categoryId]);
 
-  useEffect(() => {
-    if (errorCategory) {
-      alert(errorCategory);
-    }
-  }, [errorCategory]);
-
-  useEffect(() => {
-    if (errorDetails) {
-      alert(errorDetails);
-    }
-  }, [errorDetails]);
-
-  // return <div>ContentCategory</div>;
   return (
     <div>
       <Navbar></Navbar>

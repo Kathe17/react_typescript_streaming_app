@@ -1,4 +1,4 @@
 {
-  "watch": ["server.js", "src/Api/"],
-  "ext": "js, css, tsx, ts"
+  "watch": ["server.js", "src/Api/", "src/db/"],
+  "ext": "js, css, tsx, ts, json"
 }

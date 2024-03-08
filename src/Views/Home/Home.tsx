@@ -1,11 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import CategoryCard from "./Components/CategoryCard/CategoryCard";
 import Navbar from "../../Components/Navbar/Navbar";
-import { getCategoriesApi } from "../../Services/Categories.api";
-import { asignarMensajeErrorPeticionesAxios } from "../../utils/utils";
-import { CategoryContext } from "../../Providers/CategoriesProvider";
-import useCategories from "../../Hooks/useCategories";
 import Footer from "../../Components/Footer/Footer";
+import useCategories from "./Hooks/useCategories";
 
 const Home = () => {
   const { categories, getCategories, error } = useCategories();
@@ -13,12 +10,6 @@ const Home = () => {
   useEffect(() => {
     getCategories();
   }, []);
-
-  useEffect(() => {
-    if (error) {
-      alert(error);
-    }
-  }, [error]);
 
   return (
     <div

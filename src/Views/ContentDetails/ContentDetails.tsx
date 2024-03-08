@@ -1,48 +1,28 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-import useDetails from "../ContentCategory/Hooks/useDetails";
-import useCategories from "../../Hooks/useCategories";
 import Navbar from "../../Components/Navbar/Navbar";
 import { DetailsModel } from "../../Models/Details.model";
+import useDetails from "../../Hooks/useDetails";
 
 const ContentDetails = () => {
   // const { categories } = useContext(CategoryContext);
   const { detailId } = useParams();
 
-  const { categories, getCategories, error: errorCategories } = useCategories();
   const { details, getDetails, error: errorDetails } = useDetails();
 
-  const getFirstDetail = (detail: DetailsModel[]) => {
+  const getFirstDetail = (details: DetailsModel[]) => {
     return details?.[0];
   };
-
-  useEffect(() => {
-    getCategories();
-  }, []);
 
   useEffect(() => {
     if (detailId) {
       const detailIdNumber = parseInt(detailId);
       if (!isNaN(detailIdNumber)) {
-        getDetails(undefined, detailIdNumber);
+        getDetails({ detailId: detailIdNumber });
       }
     }
   }, [detailId]);
 
-  useEffect(() => {
-    if (errorCategories) {
-      alert(errorCategories);
-    }
-  }, [errorCategories]);
-
-  useEffect(() => {
-    if (errorDetails) {
-      alert(errorDetails);
-    }
-  }, [errorDetails]);
-
-  // return <div>ContentCategory</div>;
   return (
     <div>
       <Navbar></Navbar>

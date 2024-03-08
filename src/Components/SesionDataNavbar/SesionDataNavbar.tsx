@@ -1,20 +1,17 @@
 import React from "react";
 import { getUserFromSession } from "../../utils/utils";
 import Button from "../Button/Button";
-
 import { useNavigate } from "react-router-dom";
-import SearchBar from "../SearchBar/Searchbar";
+import SearchBar from "../SearchBar/SearchBar";
 
 const SesionDataNavbar = () => {
   const navigate = useNavigate();
   const user = getUserFromSession();
+
+  // const
   return (
-    <div className="hidden md:flex items-center space-x-3">
-      <SearchBar
-        onSearch={(searchTerm) => {
-          console.log(searchTerm);
-        }}
-      />
+    <div className="hidden md:flex items-center justify-end space-x-3 w-full h-full">
+      <SearchBar />
       <img
         src={user?.imgProfile}
         alt="Profile"
