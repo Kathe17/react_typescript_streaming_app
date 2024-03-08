@@ -50,7 +50,7 @@ const ContentCategory = () => {
             backgroundSize: "100% 100%",
           }}
         >
-          <div className="flex flex-row justify-evenly w-full absolute bottom-2">
+          <div className="grid grid-cols-4 gap-4 h-5/6">
             {details?.map((detail) => (
               <DetailsCard key={category.id} details={detail} />
             ))}

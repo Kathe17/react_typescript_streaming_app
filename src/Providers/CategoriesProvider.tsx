@@ -5,8 +5,6 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { UsuarioModel } from "../Models/Usuario.model";
-import { useNavigate } from "react-router-dom";
 import { CategoryModel } from "../Models/Category.model";
 
 interface CategoryContextData {
