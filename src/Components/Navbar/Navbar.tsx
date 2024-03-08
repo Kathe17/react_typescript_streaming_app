@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
           <div className="flex space-x-4 w-full sm:w-4/5">
             <div className="w-1/2 sm:w-1/6">
               <a href="#" className="flex items-center py-5 px-2">
-                <img src="./Assets/Logo.png" alt="App Icon" className="w-12" />
+                <img src="/Assets/Logo.png" alt="App Icon" className="w-12" />
                 <span className="font-bold">Streaming App</span>
               </a>
             </div>
