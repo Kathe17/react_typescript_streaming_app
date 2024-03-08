@@ -7,6 +7,7 @@ export default function useDetails() {
   const [error, setError] = useState<string>();
 
   const [details, setDetails] = useState<DetailsModel[]>([]);
+  const [detail, setDetail] = useState<DetailsModel>();
 
   const clearDetails = () => {
     setDetails([]);
@@ -23,7 +24,13 @@ export default function useDetails() {
         categoryId,
         searchTerm,
       });
-      setDetails(responseGetDetails.data);
+      //Si filtra por detailId, traiga un solo detail o undefined en caso de que no la encuentre
+      if (detailId) {
+        setDetail(responseGetDetails.data?.[0]);
+      } else {
+        //Caso contrario, guarde la lista de details
+        setDetails(responseGetDetails.data);
+      }
     } catch (error) {
       const tempError = asignarMensajeErrorPeticionesAxios(error);
       setError(tempError);
@@ -33,6 +40,7 @@ export default function useDetails() {
 
   return {
     details,
+    detail,
     getDetails,
     clearDetails,
     error,
