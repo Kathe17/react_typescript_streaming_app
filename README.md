@@ -3,7 +3,7 @@
 
 This is my project introduction video (Este es mi vídeo de introducción al proyecto) :https://www.youtube.com/watch?v=uh8rMDpVR_U <br/>
 
-[![Streaming App](https://img.youtube.com/vi/uh8rMDpVR_U/1.jpg)](https://www.youtube.com/watch?v=uh8rMDpVR_U)
+[![Streaming App](https://img.youtube.com/vi/uh8rMDpVR_U/0.jpg)](https://www.youtube.com/watch?v=uh8rMDpVR_U)
 
 This is a simple streaming website built with React, TypeScript, and Tailwind CSS. The website includes the following features:
 
