@@ -30,7 +30,7 @@ const ContentDetailsComponent = ({
         backgroundSize: "100% 100%",
       }}
     >
-      <div className="flex flex-col justify-evenly items-start w-2/5 h-5/6">
+      <div className="flex flex-col justify-evenly items-start w-full sm:w-2/5 h-5/6">
         <div className="w-full p-2">
           <img className="w-1/5" src={detail.logo} alt="" />
           <div className="flex w-1/6 bg-slate-500 rounded-lg justify-center">
